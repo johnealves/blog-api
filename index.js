@@ -16,6 +16,7 @@ app.get('/', (request, response) => {
   response.send();
 });
 
+app.get('/', (_req, res) => res.status(200).send('hyrule API'));
 app.post('/login', controllers.login);
 app.use('/user', userRoutes);
 app.use('/post', postRoutes);
