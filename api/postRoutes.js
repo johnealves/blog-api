@@ -8,9 +8,9 @@ const route = express.Router();
 route.use(bodyParser.json());
 
 route.post('/', authJwt, controllers.createPost);
-route.get('/', authJwt, controllers.listAllPosts);
-route.get('/search?', authJwt, controllers.searchTerm);
-route.get('/:id', authJwt, controllers.findPostById);
+route.get('/', controllers.listAllPosts);
+route.get('/search?', controllers.searchTerm);
+route.get('/:id', controllers.findPostById);
 route.put('/:id', authJwt, controllers.updatePostById);
 route.delete('/:id', authJwt, controllers.deletePostById);
 
